@@ -15,12 +15,32 @@ let pokemonList = [
     types:"fire"
   },
 ];
+let pokemonRepository = (function () {
+  return {
+    add: function(pokemon) {
+      pokemonList.push(pokemon);
+    },
+    getAll: function() {
+      return pokemonList;
+    }
+  };
+})();
 
-for (let i=0;i<3;i++){
-  if (pokemonList[i].height >= 1){
-    document.write(pokemonList[i].name + "(height:" + pokemonList[i].height + ") " + " - Wow,that's big! ");
-  }
-  else {
-    document.write(pokemonList[i].name + "(height:" + pokemonList[i].height + ") ");
-  }
-}
+pokemonRepository.add(
+  {
+    name: "Butterfree",
+    height: 1.1,
+    types: ["bug","flying"]
+   }
+ );
+ console.log(pokemonRepository.getAll());
+
+(function(){
+  pokemonList.forEach (function(pokemon){
+    if (pokemonList[i].height >= 1){
+      document.write(pokemonList[i].name + " (height:" + pokemonList[i].height + ") " + " - Wow,that's big!<br> ");
+    }
+    else {
+      document.write(pokemonList[i].name + " (height:" + pokemonList[i].height + ") <br>");
+  });
+})();
