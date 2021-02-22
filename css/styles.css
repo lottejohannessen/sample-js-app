@@ -6,27 +6,30 @@ body {
 background-color: #D6D6D5;
 font-family:'oswald', sans-serif;
 font-size: 16px;
-line-height:2.0;
-display: grid;
-grid-template-rows: auto 1fr auto;
-margin-right:15px;
+display:inline-flex;
 }
 
 div {
   padding: 10px;
-  display: block;
+  width: 100%;
 }
 button {
   border: none;
   font-family: inherit;
   display: block;
   background-color: #6A8067;
-  padding: 10px;
-  border-radius: 3px;
+  padding: 20px;
+  border-radius: 30px;
   border-bottom: 2px solid rgba(0,0,0,0.3);
   transition: 0.2s opacity;
 }
 button:hover, button:focus {
   cursor: pointer;
   opacity:0.8;
+}
+.pokemonphoto {
+  margin-right: 10px;
+  float: left;
+  width: 400px;
+  border-radius: 10%;
 }
