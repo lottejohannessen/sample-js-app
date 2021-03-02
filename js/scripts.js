@@ -22,7 +22,7 @@ let pokemonRepository = (function() {
     let pokemonList = document.querySelector('.pokemon-List');
     let listItem = document.createElement('div');
     let button = document.createElement('button');
-    button.innerText = '['name: ' + pokemon.name + ', height: ' + pokemon.height ', types: pokemon.types +']';
+    button.innerText = '[name: ' + pokemon.name + ', height: ' + pokemon.height + ', types:' +  pokemon.types + ']';
     button.classList.add('pokemon-list-style');
     listItem.appendChild(button);
     pokemonList.appendChild(listItem);
@@ -45,23 +45,24 @@ let pokemonRepository = (function() {
       console.error(e);
     });
   }
-function loadDetails(item){
-  let url= item.detailsUrl;
-  return fetch(url).then(function(response) {
-    return response.json();
-  }).then(funtion(details){
-    item.imageUrl=details.sprites.front_default;
-    item.height=details.height;
-    item.types=details.types;
-  }).catch(function(e){
-    console.error(e);
-  });
-};
+  function loadDetails(item) {
+    let url = item.detailsUrl;
+    return fetch(url).then(function(response) {
+      return response.json();
+    }).then(function(details) {
+      item.imageUrl = details.sprites.front_default;
+      item.height = details.height;
+      item.types = details.types;
+    }).catch(function(e) {
+      console.error(e);
+    });
+  };
 
   return {
     add: add,
     getAll: getAll,
-    addListItem: addListItem
+    addListItem: addListItem,
+    loadList: loadList
   };
 })();
 
