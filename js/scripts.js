@@ -20,7 +20,7 @@ let pokemonRepository = (function() {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function() {
-      let page = document.querySelector('.pokedex-window');
+      let page = document.querySelector('.pokemonList-window');
 
       function container() {
         let creatediv = document.createElement('div');
@@ -75,7 +75,7 @@ let pokemonRepository = (function() {
   }
 
   function showLoading() {
-    let pokemonList = document.querySelector('.pokedex-window');
+    let pokemonList = document.querySelector('.pokemonList-window');
     let newDiv = document.createElement('div');
     newDiv.innerText = 'Loading List!';
     newDiv.classList.add('msg-board');
@@ -83,7 +83,7 @@ let pokemonRepository = (function() {
   }
 
   function hideLoading() {
-    let pokemonList = document.querySelector('.pokedex-window');
+    let pokemonList = document.querySelector('.pokemonList-window');
     let node = pokemonList.firstElementChild;
     setTimeout(function() {
       node.parentElement.removeChild(node);
@@ -143,7 +143,7 @@ let pokemonRepository = (function() {
       item.types = details.types;
       item.weight = details.weight;
       item.types = [];
-      details.types.forEach(function(itemAbility) {
+      details.types.forEach(function(itemType) {
         item.types.push(' ' + cap(itemType.type.name));
       });
     }).then(function() {
