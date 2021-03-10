@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+.box {
+    width: 320px;
+    padding: 10px;
+    border: 5px solid grey;
+    margin: 10;
+}
+
 body {
 background-color: #D6D6D5;
 font-family:'oswald', sans-serif;
@@ -9,11 +16,10 @@ font-size: 16px;
 display:inline-flex;
 }
 
-div {
-  padding: 10px;
-  width: 100%;
+.pokemon-list {
+  margin-top: 70px;
 }
-button {
+.button-class {
   border: none;
   font-family: inherit;
   display: block;
@@ -32,4 +38,14 @@ button:hover, button:focus {
   float: left;
   width: 400px;
   border-radius: 10%;
+}
+.btn btn-secondary {
+  border: none;
+  font-family: inherit;
+  display: block;
+  background-color: #6A8067;
+  padding: 20px;
+  border-radius: 30px;
+  border-bottom: 2px solid rgba(0,0,0,0.3);
+  transition: 0.2s opacity;
 }
