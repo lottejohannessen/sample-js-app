@@ -4,7 +4,7 @@
   "browser": true
 },
 "extends": [
-"eslint:recommended"
+  "eslint:recommended"
 ],
 "rules": {
   "quotes":["error","single"]
