@@ -38,7 +38,7 @@ let pokemonRepository = (function() {
       body.append(title);
       body.append(button);
 
-      button.on('click', function(event) {
+      button.on('click', function() {
         showDetails(pokemon);
       });
     });
@@ -104,7 +104,7 @@ let pokemonRepository = (function() {
   function showModal(item) {
     let modalBody = $('.modal-body');
     let modalTitle = $('.modal-title');
-    let modalHeader = $('.modal-header');
+
     // Clear all existing modal content
     modalTitle.empty();
     modalBody.empty();
@@ -143,13 +143,9 @@ let pokemonRepository = (function() {
   }
 
   return {
-    add: add,
-    getAll: getAll,
-    addListItem: addListItem,
-    loadList: loadList,
-    loadDetails: loadDetails,
-    showDetails: showDetails,
-    showModal: showModal
+    getAll,
+    addListItem,
+    loadList
   };
 })();
 
@@ -161,6 +157,8 @@ pokemonRepository.loadList().then(function() {
 });
 
 // search pokemon function defined here...
+
+document.getElementbyId('myInput').addEventListener('keyup', function())
 function search() {
   var input, filter, ul, li, a, i, txtValue;
   input = document.getElementById('myInput');
@@ -180,4 +178,4 @@ function search() {
       li[i].style.display = 'none';
     }
   }
-}
+});
